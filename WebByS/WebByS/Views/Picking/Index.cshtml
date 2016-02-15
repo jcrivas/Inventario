@@ -1,0 +1,138 @@
+﻿@model List<ByS.Inventario.Entities.bePedido>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+        @using (Html.BeginForm("ProgramarPicking", "Picking", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+<div class="panel panel-info">
+    <h4 class="panel-heading">Generar lista de Picking</h4>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group form-group-sm">
+                    <div class="col-md-7 col-sm-8 col-xs-12">
+                        <div class="input-group">
+                            <label>Pedidos: Del </label>
+                            <input id="txtPedidoInicio" style="width:40px;" name="txtPedidoInicio" type="text"  />
+                            <label>Al </label>
+                            <input id="txtPedidoFin" style="width:40px;" name="txtPedidoFin" type="text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group form-group-sm">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            Sucursal @Html.DropDownList("IdSucursal", (SelectList)ViewBag.Sucursal, "--Seleccionar Sucursal--", new { id = "IdSucursal" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group form-group-sm">
+                    <div class="col-md-7 col-sm-8 col-xs-12">
+                        <div class="col-xs-12">
+                            <input id="btnFiltrar" name="submitButton" type="submit" class="btn btn-default btn-sm form-control" value="Buscar">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <br /><br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group form-group-sm">
+                    <div class="col-md-7 col-sm-8 col-xs-12">
+                        <div class="input-group">
+                            Fecha <input id="txtFecha" name="txtFecha" value="@DateTime.Now.ToShortDateString()" type="text" /><i class="fa fa-calendar"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group form-group-sm">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            Responsable @Html.DropDownList("IdEmpleado", (SelectList)ViewBag.Empleado, "--Seleccionar responsable--", new { id = "IdEmpleado" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group form-group-sm">
+                    <div class="col-xs-12">
+                        <input id="btnGrabar" name="submitButton" type="submit" class="btn btn-primary" value="Grabar">
+                        <a href="~/Picking/Listado" class="btn btn-primary">Listar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group form-group-sm">
+                    <div class="col-xs-12">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group form-group-sm">
+                    <div class="col-xs-12">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group form-group-sm">
+                    <div class="col-md-7 col-sm-8 col-xs-12">
+                        <div class="col-xs-12">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal">
+            <div class="table-responsive">
+                <table id="tblistado" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center"></th>
+                            <th class="text-center">Nota pedido</th>
+                            <th class="text-center">Sucursal</th>
+                            <th class="text-center">Fecha Entrega</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbPedido">
+                        @Html.Partial("Tabla",Model)
+                        @*@if (Model != null && Model.Count > 0)
+                        {
+                            int j = 0;
+                            foreach (var u in Model)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(a => a[j].NumeroPedido) @Html.HiddenFor(a => a[j].NumeroPedido)</td>
+                                    <td>@Html.DisplayFor(a => a[j].NombreSucursal)</td>
+                                    <td>@Html.DisplayFor(a => a[j].FechaFormateada)</td>
+                                    <td>@Html.CheckBoxFor(a => a[j].Seleccionado) @Html.HiddenFor(a => a[j].Seleccionado)</td>
+                                </tr>
+                                j++;
+                            }
+                        }*@
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+}     
+<script src="~/Scripts/Picking2.js"></script>

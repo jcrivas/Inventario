@@ -1,0 +1,90 @@
+﻿@model List<ByS.Inventario.Entities.beNotaIngreso>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Listado</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Fecha
+            </th>
+            <th>
+                Numero Orden Compra
+            </th>
+            <th>
+                IdEmpleado
+            </th>
+            <th>
+                UsuarioRecibo
+            </th>
+            <th>
+                IdAlmacen
+            </th>
+            <th>
+                GuiaRemision
+            </th>
+            <th>
+                Observaciones
+            </th>
+            <th>
+                EstadoNotaIngreso
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroNotaIngreso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroOrdenCompra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioRecibo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdAlmacen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GuiaRemision)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observaciones)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoNotaIngreso)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.NumeroNotaIngreso  }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.NumeroNotaIngreso  }) |
+                @*@Html.ActionLink("Delete", "Delete", new {  id=item.NumeroNotaIngreso  })*@
+                <a title="Eliminar" onclick="return confirm('¿Está seguro de eliminar?');" href="~/NotaIngresoNew/Delete/@item.NumeroNotaIngreso">Eliminar</a>
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

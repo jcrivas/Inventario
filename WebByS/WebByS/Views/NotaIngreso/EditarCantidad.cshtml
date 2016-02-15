@@ -1,0 +1,85 @@
+﻿@model ByS.Inventario.Entities.beDetalleNotaIngreso
+
+@{
+    ViewBag.Title = "EditarCantidad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("guardarCantidad", "NotaIngreso", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="panel panel-info">
+        <h4 class="panel-heading">Editar cantidad</h4>
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-md-5 col-sm-4 col-xs-12">Nro. Nota Ingreso</label>
+                            <input id="NumeroNotaIngreso" style="width:40px;" name="NumeroNotaIngreso" value="@Model.NumeroNotaIngreso" class="noeditable" readonly="true" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-md-5 col-sm-4 col-xs-12">Producto</label>
+                            <input id="IdProducto" style="width:40px;" name="IdProducto" value="@Model.IdProducto" class="noeditable" readonly="true" />
+                            <input id="NombreProducto" style="width:180px;" name="NombreProducto" value="@Model.NombreProducto" class="noeditable" readonly="true" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-md-5 col-sm-4 col-xs-12">Cantidad</label>
+                            <input id="Cantidad" style="width:60px;" name="Cantidad" value="@Model.Cantidad" onkeypress = "return disallowNegativeNumber(event)" />
+                            <input type="submit" id="btnGrabar" name="btnGrabar" value="Grabar" class="btn btn-primary" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script src="~/Scripts/NotaIngresoEditarCantidad.js"></script>
+<script>
+    function disallowNegativeNumber(e) {
+        var charCode = (e.which) ? e.which : event.keyCode
+        if (charCode == 45) {
+            return false;
+        }
+        if (e.keyCode == '9' || e.keyCode == '16') {
+            return;
+        }
+        var code;
+        if (e.keyCode) code = e.keyCode;
+        else if (e.which) code = e.which;
+        if (e.which == 46)
+            return false;
+        if (code == 8 || code == 46)
+            return true;
+        if (code < 48 || code > 57)
+            return false;
+        return true;
+    }
+</script>
+
+<div>
+    @Html.ActionLink("Regresar", "Editar/"+@Model.NumeroNotaIngreso)
+</div>

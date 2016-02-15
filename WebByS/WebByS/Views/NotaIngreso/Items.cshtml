@@ -1,0 +1,102 @@
+﻿@model IEnumerable<ByS.Inventario.Entities.beDetalleNotaIngreso>
+
+@{
+    ViewBag.Title = "Items";
+    List<ByS.Inventario.Entities.beProducto> listaProducto = ViewBag.Producto;
+    Int32 IDNOTA = ViewBag.NotaIngresoID;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Items</h2>
+
+<div class="panel panel-info">
+    <h4 class="panel-heading">Lista de Notas de Ingreso</h4>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <caption>Lista de Productos</caption>
+                    <tr>
+                        <th>
+                            Id Producto
+                        </th>
+                        <th>
+                            Descripción
+                        </th>
+                        <th>
+                            Unidad de Medida
+                        </th>
+                        <th>
+                            Presentación
+                        </th>
+                        <th></th>
+                    </tr>
+                    @foreach (var prod in listaProducto)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => prod.IdProducto)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => prod.Descripcion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => prod.UnidadMedida)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => prod.Presentacion)
+                            </td>
+                            <td>
+                            <a title="Agregar" href="~/NotaIngreso/EditarCantidad?id=@IDNOTA&idProducto=@prod.IdProducto">Agregar</a>
+                        </td>
+                        </tr>
+                    }
+                    </table>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <caption>Items de Nota de Ingreso</caption>
+                    <tr>
+                        <th>
+                            Nota Ingreso
+                        </th>
+                        <th>
+                            IdProducto
+                        </th>
+                        <th>
+                            Descripción
+                        </th>
+                        <th>
+                            Cantidad
+                        </th>
+                        <th></th>
+                    </tr>
+
+                @foreach (var item in Model) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NumeroNotaIngreso)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IdProducto)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NombreProducto)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cantidad)
+                        </td>
+                        <td>
+                            <a title="Editar" href="~/NotaIngreso/EditarCantidad?id=@item.NumeroNotaIngreso&idProducto=@item.IdProducto">Editar</a> |
+                            <a title="Eliminar" onclick="return confirm('¿Está seguro de eliminar?');" href="~/NotaIngreso/DeleteProducto?id=@item.NumeroNotaIngreso&idProducto=@item.IdProducto">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    @Html.ActionLink("Cancelar", "Index")
+</div>

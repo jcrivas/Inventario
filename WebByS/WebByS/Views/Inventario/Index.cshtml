@@ -1,0 +1,109 @@
+﻿@model List<ByS.Inventario.Entities.beProgramacionInventario>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-info">
+    <h4 class="panel-heading">Registro de Inventario</h4>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-md-5 col-sm-4 col-xs-12">Descripción:</label>
+                        <div class="col-md-7 col-sm-8 col-xs-12">
+                            <input id="txtDescripcion" name="txtDescripcion" type="text" class="form-control" data-bind="value: FiltroBusqueda.NumeroNotaIngreso" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-md-3 col-sm-4 col-xs-12">Sucursal:</label>
+                        <div class="col-md-9 col-sm-8 col-xs-12">
+                            @Html.DropDownList("Sucursal", (SelectList)ViewBag.Sucursal, "--Seleccionar Sucursal--", new { id = "Sucursal" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group form-group-sm">
+                        <div class="col-xs-12">
+                            <input id="btnFiltrar" type="button" class="btn btn-default btn-sm form-control" value="Buscar">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm">
+                        <a href="~/Inventario/Editar" class="btn btn-primary">Nuevo Registro</a>
+                        <a href="#" onclick="PrintElem('#listado')" class="btn btn-primary">Imprimir Listado</a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group form-group-sm">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm">
+                    </div>
+                </div>
+            </div>
+            <div id="listado" class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center"></th>
+                            <th class="text-center">Código</th>
+                            <th class="text-center">Fecha Inv.</th>
+                            <th class="text-center">Sucursal</th>
+                            <th class="text-center">Almacén</th>
+                            <th class="text-center">Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbListado">
+                        @foreach (var u in Model)
+                        {
+                            <tr>
+                                <td><a title="Editar" href="~/Inventario/Editar/@u.IdProgramacionInventario"><img src="../../Content/images/editar-icono.png" alt="Editar" title="Editar" /></a>
+                                    <a title="Eliminar" onclick="return confirm('¿Está seguro de eliminar?');" href="~/Inventario/Delete/@u.IdProgramacionInventario"><img src="../../Content/images/eliminar-icono.png" alt="Eliminar" title="Eliminar" /></a>
+                                </td>
+                                <td>@u.IdProgramacionInventario</td>
+                                <td>@u.FechaFormateada</td>
+                                <td>@u.NombreSucursal</td>
+                                <td>@u.NombreAlmacen</td>
+                                <td>@u.DescripcionInventario</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table> 
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/ProgramacionInventario.js"></script>
+<script type="text/javascript">
+
+    function PrintElem(elem) {
+        Popup($(elem).html());
+    }
+
+    function Popup(data) {
+        var mywindow = window.open('', 'my div', 'height=400,width=600');
+        mywindow.document.write('<html><head><title>Listado de Programación de Inventario</title>');
+        /*optional stylesheet*/ //mywindow.document.write('<link rel="stylesheet" href="main.css" type="text/css" />');
+        mywindow.document.write('</head><body >');
+        mywindow.document.write(data);
+        mywindow.document.write('</body></html>');
+
+        mywindow.document.close(); // necessary for IE >= 10
+        mywindow.focus(); // necessary for IE >= 10
+
+        mywindow.print();
+        mywindow.close();
+
+        return true;
+    }
+
+</script>

@@ -1,0 +1,103 @@
+﻿@model List<ByS.Inventario.Entities.beDetalleOrdenCompra>
+
+@{
+    ViewBag.Title = "InternarOC";
+    String NumeroDocumento = ViewBag.NumeroDocumento;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("internarOrdenCompra", "ProductoAlmacenar", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+<div class="panel panel-info">
+    <h4 class="panel-heading">Internamiento a almacén de O/C</h4>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group form-group-sm">
+                    <label class="control-label col-md-5 col-sm-4 col-xs-12">Orden de Compra N°</label>
+                    <div class="col-md-7 col-sm-8 col-xs-12">
+                        <div class="input-group">
+                            <input id="numeroDoc" name="numeroDoc" value="@NumeroDocumento" type="text" readonly="true" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                    <label class="control-label col-md-5 col-sm-4 col-xs-12">Almacen</label>
+                    <div class="col-md-7 col-sm-8 col-xs-12">
+                            <div class="input-group">
+                                @Html.DropDownList("IdAlmacen", (SelectList)ViewBag.Almacen, "--Seleccionar Almacén--", new { id = "IdAlmacen" })
+                            </div>
+                        </div>
+                </div>
+            <div class="col-md-2">
+                <div class="form-group form-group-sm">
+                    <div class="col-xs-12">
+                        <input id="btnGrabar" name="btnGrabar" type="submit" class="btn btn-default btn-sm form-control" value="Grabar">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal">
+            <div class="table-responsive">
+                <table id="tbDetalle" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Nota ingreso</th>
+                            <th class="text-center">Id Producto</th>
+                            <th class="text-center">Descripción</th>
+                            <th class="text-center">Cantidad a Internar</th>
+                            <th class="text-center">Cantidad Solicitada</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbDocumento">
+                        @if (Model != null && Model.Count > 0){
+                            int j = 0;
+                            foreach (var u in Model)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(a=>a[j].nOrdenCompra) @Html.HiddenFor(a=>a[j].nOrdenCompra)</td>
+                                    <td>@Html.DisplayFor(a=>a[j].IdProducto) @Html.HiddenFor(a=>a[j].IdProducto)</td>
+                                    <td>@Html.DisplayFor(a=>a[j].NombreProducto) @Html.HiddenFor(a=>a[j].NombreProducto)</td>
+                                    <td>@Html.TextBoxFor(a=>a[j].CantidadInternar, new { onkeypress = "return isNumberKey(event);" })</td>
+                                    <td>@Html.DisplayFor(a=>a[j].Cantidad) @Html.HiddenFor(a=>a[j].Cantidad)</td>
+                                </tr>
+                                j++;
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+}
+<script src="~/Scripts/InternarNotaIngreso.js"></script>
+<script>
+    function disallowNegativeNumber(e) {
+        var charCode = (e.which) ? e.which : event.keyCode
+        if (charCode == 45) {
+            return false;
+        }
+        if (e.keyCode == '9' || e.keyCode == '16') {
+            return;
+        }
+        var code;
+        if (e.keyCode) code = e.keyCode;
+        else if (e.which) code = e.which;
+        if (e.which == 46)
+            return false;
+        if (code == 8 || code == 46)
+            return true;
+        if (code < 48 || code > 57)
+            return false;
+        return true;
+    }
+</script>
+<p>
+     @Html.ActionLink("Retornar", "Index")
+</p>
+

@@ -1,0 +1,5 @@
+C:\Users\mt1marco\Desktop\WebBS\Librerias.EntidadesNegocio\bin\Debug\Librerias.EntidadesNegocio.dll
+C:\Users\mt1marco\Desktop\WebBS\Librerias.EntidadesNegocio\bin\Debug\Librerias.EntidadesNegocio.pdb
+C:\Users\mt1marco\Desktop\WebBS\Librerias.EntidadesNegocio\obj\Debug\Librerias.EntidadesNegocio.csprojResolveAssemblyReference.cache
+C:\Users\mt1marco\Desktop\WebBS\Librerias.EntidadesNegocio\obj\Debug\Librerias.EntidadesNegocio.dll
+C:\Users\mt1marco\Desktop\WebBS\Librerias.EntidadesNegocio\obj\Debug\Librerias.EntidadesNegocio.pdb

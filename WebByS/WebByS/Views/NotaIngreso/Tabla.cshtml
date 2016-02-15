@@ -1,0 +1,16 @@
+﻿@using ByS.Inventario.Entities
+@model List<beNotaIngreso>
+
+@foreach (var u in Model)
+{
+    <tr>
+        <td><a title="Eliminar" onclick="return confirm('¿Está seguro de eliminar?');" href="~/NotaIngreso/Delete/@u.NumeroNotaIngreso">Eliminar</a>
+            <a title="Editar" href="~/NotaIngreso/Editar/@u.NumeroNotaIngreso">Editar</a>
+        </td>
+        <td>@u.NumeroNotaIngreso</td>
+        <td>@u.NumeroOrdenCompra</td>
+        <td>@u.Fecha</td>
+        <td>@u.IdAlmacen</td>
+        <td>@u.EstadoNotaIngreso</td>
+    </tr>
+}

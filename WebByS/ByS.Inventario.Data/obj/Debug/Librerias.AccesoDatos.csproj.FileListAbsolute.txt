@@ -1,0 +1,7 @@
+C:\Users\mt1marco\Desktop\WebBS\Librerias.AccesoDatos\bin\Debug\Librerias.AccesoDatos.dll
+C:\Users\mt1marco\Desktop\WebBS\Librerias.AccesoDatos\bin\Debug\Librerias.AccesoDatos.pdb
+C:\Users\mt1marco\Desktop\WebBS\Librerias.AccesoDatos\bin\Debug\Librerias.EntidadesNegocio.dll
+C:\Users\mt1marco\Desktop\WebBS\Librerias.AccesoDatos\bin\Debug\Librerias.EntidadesNegocio.pdb
+C:\Users\mt1marco\Desktop\WebBS\Librerias.AccesoDatos\obj\Debug\Librerias.AccesoDatos.csprojResolveAssemblyReference.cache
+C:\Users\mt1marco\Desktop\WebBS\Librerias.AccesoDatos\obj\Debug\Librerias.AccesoDatos.dll
+C:\Users\mt1marco\Desktop\WebBS\Librerias.AccesoDatos\obj\Debug\Librerias.AccesoDatos.pdb

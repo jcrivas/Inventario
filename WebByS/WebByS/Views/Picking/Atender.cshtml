@@ -1,0 +1,125 @@
+﻿@model ByS.Inventario.Entities.beDetalleProgramacionPicking
+
+@{
+    ViewBag.Title = "Atender";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("guardarCantidad", "Picking", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+<div class="panel panel-info">
+    <h4 class="panel-heading">Atender Pedido</h4>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-md-5 col-sm-4 col-xs-12">Código de producto</label>
+                        <div class="col-md-7 col-sm-8 col-xs-12">
+                            <div class="input-group">
+                                <input id="IdProducto" name="IdProducto" value="@Model.IdProducto" class="noeditable" readonly="true" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-md-5 col-sm-4 col-xs-12">Descripción de producto</label>
+                        <div class="col-md-7 col-sm-8 col-xs-12">
+                            <div class="input-group">
+                                <input id="NombreProducto" style="width:250px" name="NombreProducto" value="@Model.NombreProducto" class="noeditable" readonly="true" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-md-5 col-sm-4 col-xs-12">Unidad de medida</label>
+                        <div class="col-md-7 col-sm-8 col-xs-12">
+                            <div class="input-group">
+                                <input id="UnidadMedida" name="UnidadMedida" value="@Model.UnidadMedida" class="noeditable" readonly="true" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-md-5 col-sm-4 col-xs-12">Cantidad pedida</label>
+                        <div class="col-md-7 col-sm-8 col-xs-12">
+                            <div class="input-group">
+                                <input id="CantidadPedido" name="CantidadPedido" value="@Model.CantidadPedido" class="noeditable" readonly="true" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-md-5 col-sm-4 col-xs-12">Saldo</label>
+                        <div class="col-md-7 col-sm-8 col-xs-12">
+                            <div class="input-group">
+                                <input id="Saldo" name="Saldo" value="@Model.Saldo" class="noeditable" readonly="true" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-md-5 col-sm-4 col-xs-12">Ingrese cantidad a atender</label>
+                        <div class="col-md-7 col-sm-8 col-xs-12">
+                            <div class="input-group">
+                                <input id="CantidadAtendida" name="CantidadAtendida" value="@Model.CantidadAtendida" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-md-5 col-sm-4 col-xs-12">Stock</label>
+                        <div class="col-md-7 col-sm-8 col-xs-12">
+                            <div class="input-group">
+                                <input id="Stock" name="Stock" value="@Model.Stock" class="noeditable" readonly="true" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm">
+                        <div class="col-md-7 col-sm-8 col-xs-12">
+                            <div class="input-group">
+                                <input id="btnGrabar" type="submit" value="Grabar" class="btn btn-primary" />
+                                <input id="NumeroPedido" name="NumeroPedido" value="@Model.NumeroPedido" type="hidden" />
+                                <input id="IdProgramacionPicking" name="IdProgramacionPicking" value="@Model.IdProgramacionPicking" type="hidden" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm">
+                        <div class="col-md-7 col-sm-8 col-xs-12">
+                            <div class="input-group">
+                                <input id="btnReabastecer" type="submit" value="Reabastecer" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}
+<script src="~/Scripts/PickingAtender.js"></script>
+<div>
+    @Html.ActionLink("Retornar", "Pickar/" + Model.NumeroPedido.Trim() )
+</div>

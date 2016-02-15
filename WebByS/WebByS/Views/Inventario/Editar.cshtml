@@ -1,0 +1,113 @@
+﻿@model ByS.Inventario.Entities.beProgramacionInventario
+
+@{
+    ViewBag.Title = "Editar";
+    String MENSAJE = ViewBag.Mensaje;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("guardar", "Inventario", FormMethod.Post)) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="panel panel-info">
+        <h4 class="panel-heading">@(Model.IdProgramacionInventario > 0 ? "Editar Inventario" : "Generar Inventario")</h4>
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-md-5 col-sm-4 col-xs-12">Fecha Inventario</label>
+                            <div class="col-md-7 col-sm-8 col-xs-12">
+                                <div class="input-group">
+                                    <input id="FechaInventarioTexto" name="FechaInventarioTexto" value="@Model.FechaInventarioTexto" type="text" />
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            @if (Model.IdProgramacionInventario > 0)
+                            {
+                                <label class="control-label col-md-5 col-sm-4 col-xs-12">Nro. Inventario</label>
+                            }
+                            <input id="IdProgramacionInventario" name="IdProgramacionInventario" value="@Model.IdProgramacionInventario" readonly="true" type='@(Model.IdProgramacionInventario>0?"text":"hidden")' />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-md-5 col-sm-4 col-xs-12">Sucursal</label>
+                            <div class="col-md-7 col-sm-8 col-xs-12">
+                                <div class="input-group">
+                                    @Html.DropDownList("IdSucursal", (SelectList)ViewBag.Sucursal, "--Seleccionar sucursal--", new { id = "IdSucursal" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-md-5 col-sm-4 col-xs-12">Almacen</label>
+                            <div class="col-md-7 col-sm-8 col-xs-12">
+                                <div class="input-group">
+                                    @Html.DropDownList("IdAlmacen", (SelectList)ViewBag.Almacen, "--Seleccionar almacén--", new { id = "IdAlmacen" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-md-5 col-sm-4 col-xs-12">Descripción</label>
+                            <div class="col-md-7 col-sm-8 col-xs-12">
+                                <div class="input-group">
+                                    <input id="DescripcionInventario" name="DescripcionInventario" value="@Model.DescripcionInventario" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            <div class="col-md-7 col-sm-8 col-xs-12">
+                                <div class="input-group">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            <div class="col-md-7 col-sm-8 col-xs-12">
+                                <div class="input-group">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            <div class="col-md-7 col-sm-8 col-xs-12">
+                                <div class="input-group">
+                                    <input id="btnGrabar" name="btnGrabar" type="submit" class="btn btn-primary" value="Grabar"><br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <h2>@MENSAJE</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script src="~/Scripts/InventarioEditar.js"></script>
+
+<div>
+    @Html.ActionLink("Retornar", "Index")
+</div>

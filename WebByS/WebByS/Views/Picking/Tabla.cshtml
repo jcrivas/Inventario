@@ -1,0 +1,18 @@
+﻿@model List<ByS.Inventario.Entities.bePedido>
+
+
+@if (Model != null && Model.Count > 0)
+{
+    int j = 0;
+    foreach (var u in Model)
+    {
+        <tr>
+            <td>@Html.CheckBoxFor(a => a[j].Seleccionado) @Html.HiddenFor(a => a[j].Seleccionado)</td>
+            <td>@Html.DisplayFor(a => a[j].NumeroPedido) @Html.HiddenFor(a => a[j].NumeroPedido)</td>
+            <td>@Html.DisplayFor(a => a[j].NombreSucursal)</td>
+            <td>@Html.DisplayFor(a => a[j].FechaFormateada)</td>
+        </tr>
+        j++;
+    }
+}
+

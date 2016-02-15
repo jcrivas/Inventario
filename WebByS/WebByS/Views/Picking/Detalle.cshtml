@@ -1,0 +1,111 @@
+﻿@using ByS.Inventario.Entities
+@model beProgramacionPicking
+
+@{
+    ViewBag.Title = "Detalle";
+    List<beDetalleProgramacionPicking> listaDetalle = (List<beDetalleProgramacionPicking>)ViewBag.Detalle;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-info">
+    <h4 class="panel-heading">Listado de Picking de Pedidos</h4>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group form-group-sm">
+                    <label class="control-label col-md-5 col-sm-4 col-xs-12">Responsable</label>
+                    <div class="col-md-7 col-sm-8 col-xs-12">
+                        <div class="input-group">
+                            <input id="Responsable" name="Responsable" value="@Model.Responsable" type="text" class="noeditable" readonly="true" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group form-group-sm">
+                    <label class="control-label col-md-5 col-sm-4 col-xs-12">Fecha</label>
+                    <div class="col-md-7 col-sm-8 col-xs-12">
+                        <div class="input-group">
+                            <input id="FechaFormateada" name="FechaFormateada" value="@Model.FechaFormateada" type="text" class="noeditable" readonly="true" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group form-group-sm">
+                    <label class="control-label col-md-5 col-sm-4 col-xs-12">Descripción</label>
+                    <div class="col-md-7 col-sm-8 col-xs-12">
+                        <div class="input-group">
+                            <input id="Descripcion" name="Descripcion" value="@Model.Descripcion" type="text" class="noeditable" readonly="true" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group form-group-sm">
+                    <div class="col-md-7 col-sm-8 col-xs-12">
+                        <div class="input-group">
+                            <a href="#" onclick="PrintElem('#listado')"><img src="../../Content/images/imprimir-icono.png" alt="Imprimir" title="Imprimir" /></a>       
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="listado" class="form-horizontal">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Pedido</th>
+                            <th class="text-center">Producto</th>
+                            <th class="text-center">Cantidad Pedida</th>
+                            <th class="text-center">Cantidad Atendida</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var u in listaDetalle)
+                        {
+                            <tr>
+                                <td>@u.NumeroPedido</td>
+                                <td>@u.NombreProducto</td>
+                                <td>@u.CantidadPedido</td>
+                                <td>@u.CantidadAtendida</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    function PrintElem(elem)
+    {
+        Popup($(elem).html());
+    }
+
+    function Popup(data) 
+    {
+        var mywindow = window.open('', 'my div', 'height=400,width=600');
+        mywindow.document.write('<html><head><title>Listado de Picking de Pedidos</title>');
+        /*optional stylesheet*/ //mywindow.document.write('<link rel="stylesheet" href="main.css" type="text/css" />');
+        mywindow.document.write('</head><body >');
+        mywindow.document.write(data);
+        mywindow.document.write('</body></html>');
+
+        mywindow.document.close(); // necessary for IE >= 10
+        mywindow.focus(); // necessary for IE >= 10
+
+        mywindow.print();
+        mywindow.close();
+
+        return true;
+    }
+
+</script>
+<p>
+    @Html.ActionLink("Retornar", "Listado")
+</p>

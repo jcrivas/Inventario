@@ -1,0 +1,189 @@
+﻿@model ByS.Inventario.Entities.beNotaIngreso
+
+@{
+    ViewBag.Title = "Editar";
+    List<ByS.Inventario.Entities.beDetalleNotaIngreso> detalleNotaIngreso = ViewBag.DetalleNotaIngreso;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("guardar", "NotaIngreso", FormMethod.Post)) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="panel panel-info">
+        <h4 class="panel-heading">@(Model.NumeroNotaIngreso > 0 ? "Editar Nota de Ingreso" : "Generar Nota de Ingreso")</h4>
+        
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-md-5 col-sm-4 col-xs-12">Fecha Nota Ingreso</label>
+                            <div class="col-md-7 col-sm-8 col-xs-12">
+                                <div class="input-group">
+                                    <input id="FechaFormateada" name="FechaFormateada" value="@Model.FechaFormateada" type="text" class="noeditable" readonly="true" />
+                                    <input id="Fecha" name="Fecha" value="@Model.Fecha" type="hidden" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            @if(Model.NumeroNotaIngreso>0) {
+                                <label class="control-label col-md-5 col-sm-4 col-xs-12">Nro. Nota Ingreso</label>
+                            }
+                            <input id="NumeroNotaIngreso" name="NumeroNotaIngreso" value="@Model.NumeroNotaIngreso" class="noeditable" readonly="true" type='@(Model.NumeroNotaIngreso>0?"text":"hidden")' />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-md-5 col-sm-4 col-xs-12">Supervisor</label>
+                            <div class="col-md-7 col-sm-8 col-xs-12">
+                                <div class="input-group">
+                                    @Html.DropDownList("IdEmpleado", (SelectList)ViewBag.Supervisor, "--Seleccionar supervisor--", new { id = "Empleado", @disabled = "disabled" })
+                                    @Html.HiddenFor(model => model.IdEmpleado)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-md-5 col-sm-4 col-xs-12">Almacen</label>
+                            <div class="col-md-7 col-sm-8 col-xs-12">
+                                <div class="input-group">
+                                    @Html.DropDownList("IdAlmacen", (SelectList)ViewBag.Almacen, "--Seleccionar almacén--", new { id = "IdAlmacen" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-md-5 col-sm-4 col-xs-12">Nro. Documento</label>
+                            <div class="col-md-7 col-sm-8 col-xs-12">
+                                <div class="input-group">
+                                    <input id="NumeroOrdenCompra" name="NumeroOrdenCompra" value="@Model.NumeroOrdenCompra" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-md-5 col-sm-4 col-xs-12">Proveedor</label>
+                            <div class="col-md-7 col-sm-8 col-xs-12">
+                                <div class="input-group">
+                                    @Html.DropDownList("idProveedor", (SelectList)ViewBag.Proveedor, "--Seleccionar proveedor--", new { id = "idProveedor" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-md-5 col-sm-4 col-xs-12">Guia de proveedor</label>
+                            <div class="col-md-7 col-sm-8 col-xs-12">
+                                <div class="input-group">
+                                    <input id="GuiaRemision" name="GuiaRemision" value="@Model.GuiaRemision" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-md-5 col-sm-4 col-xs-12">Observaciones</label>
+                            <div class="col-md-7 col-sm-8 col-xs-12">
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.Observaciones)
+                                    @Html.HiddenFor(model => model.EstadoNotaIngreso)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            <div class="col-md-7 col-sm-8 col-xs-12">
+                                 @if (Model.NumeroNotaIngreso > 0 && Model.EstadoNotaIngreso == "G"){
+                                    <a href="~/NotaIngreso/Items/@Model.NumeroNotaIngreso" class="btn btn-primary">Agregar item</a>
+                                 }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-group-sm">
+                            <div class="col-md-7 col-sm-8 col-xs-12">
+                                @if(Model.EstadoNotaIngreso=="G") {
+                                    <input id="btnGrabar" name="btnGrabar" type="submit" class="btn btn-primary" value="Grabar"><br />
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <h2>@ViewBag.Mensaje</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                <table class="table table-bordered">
+                    <caption>Items de Nota de Ingreso</caption>
+                    @if(Model.NumeroNotaIngreso>0) {
+                    <tr>
+                        @if (Model.EstadoNotaIngreso == "G"){
+                            <th></th>
+                        }
+                        <th>
+                            Código
+                        </th>
+                        <th>
+                            Producto
+                        </th>
+                        <th>
+                            Descripción
+                        </th>
+                        <th>
+                            Cantidad
+                        </th>
+                    </tr>
+                    }
+                @foreach (var detalle in detalleNotaIngreso)
+                {
+                    <tr>
+                        @if (Model.EstadoNotaIngreso == "G"){
+                            <td>
+                                <a title="Editar" href="~/NotaIngreso/EditarCantidad?id=@detalle.NumeroNotaIngreso&idProducto=@detalle.IdProducto"><img src="../../Content/images/editar-icono.png" alt="Editar" /></a>
+                                <a title="Eliminar" onclick="return confirm('¿Está seguro de eliminar?');" href="~/NotaIngreso/DeleteProducto?id=@detalle.NumeroNotaIngreso&idProducto=@detalle.IdProducto"><img src="../../Content/images/eliminar-icono.png" alt="Eliminar" /></a>
+                            </td>
+                        }
+                        <td>
+                            @Html.DisplayFor(modelItem => detalle.NumeroNotaIngreso)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => detalle.IdProducto)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => detalle.NombreProducto)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => detalle.Cantidad)
+                        </td>
+                    </tr>
+                }
+                </table>
+            </div>
+            </div>
+        </div>
+    </div>
+}
+<script src="~/Scripts/NotaIngresoEditar.js"></script>
+
+<div>
+    @Html.ActionLink("Cancelar", "Index")
+</div>

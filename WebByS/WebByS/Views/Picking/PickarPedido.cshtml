@@ -1,0 +1,59 @@
+﻿@model List<ByS.Inventario.Entities.beProgramacionPicking>
+
+@{
+    ViewBag.Title = "PickarPedido";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-info">
+    <h4 class="panel-heading">Realizar Picking de Pedidos</h4>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group form-group-sm">
+                    <label class="control-label col-md-5 col-sm-4 col-xs-12">N° Pedido:</label>
+                    <div class="col-md-7 col-sm-8 col-xs-12">
+                        <input id="txtNumeroPedido" name="txtNumeroPedido" type="text" class="form-control" data-bind="value: FiltroBusqueda.NumeroNotaIngreso" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group form-group-sm">
+                    <div class="col-xs-12">
+                        <input id="btnFiltrar" type="button" class="btn btn-default btn-sm form-control" value="Buscar">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center"></th>
+                            <th class="text-center">Fecha</th>
+                            <th class="text-center">Pedido</th>
+                            <th class="text-center">Sucursal</th>
+                            <th class="text-center">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbDetalle">
+                        @foreach (var u in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <a title="Pickar" href="~/Picking/Pickar/@u.NumeroPedido">Pickar</a>
+                                </td>
+                                <td>@u.FechaFormateada</td>
+                                <td>@u.NumeroPedido</td>
+                                <td>@u.NombreSucursal</td>
+                                <td>@u.DescripcionEstado</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/PickarPedido.js"></script>

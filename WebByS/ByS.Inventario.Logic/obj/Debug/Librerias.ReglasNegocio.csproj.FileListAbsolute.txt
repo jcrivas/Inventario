@@ -1,0 +1,13 @@
+C:\Users\mt1marco\Desktop\WebBS\Librerias.ReglasNegocio\bin\Debug\Librerias.ReglasNegocio.dll
+C:\Users\mt1marco\Desktop\WebBS\Librerias.ReglasNegocio\bin\Debug\Librerias.ReglasNegocio.pdb
+C:\Users\mt1marco\Desktop\WebBS\Librerias.ReglasNegocio\bin\Debug\General.Librerias.CodigoUsuario.dll
+C:\Users\mt1marco\Desktop\WebBS\Librerias.ReglasNegocio\bin\Debug\General.Librerias.EntidadesNegocio.dll
+C:\Users\mt1marco\Desktop\WebBS\Librerias.ReglasNegocio\bin\Debug\Librerias.AccesoDatos.dll
+C:\Users\mt1marco\Desktop\WebBS\Librerias.ReglasNegocio\bin\Debug\Librerias.EntidadesNegocio.dll
+C:\Users\mt1marco\Desktop\WebBS\Librerias.ReglasNegocio\bin\Debug\General.Librerias.CodigoUsuario.pdb
+C:\Users\mt1marco\Desktop\WebBS\Librerias.ReglasNegocio\bin\Debug\General.Librerias.EntidadesNegocio.pdb
+C:\Users\mt1marco\Desktop\WebBS\Librerias.ReglasNegocio\bin\Debug\Librerias.AccesoDatos.pdb
+C:\Users\mt1marco\Desktop\WebBS\Librerias.ReglasNegocio\bin\Debug\Librerias.EntidadesNegocio.pdb
+C:\Users\mt1marco\Desktop\WebBS\Librerias.ReglasNegocio\obj\Debug\Librerias.ReglasNegocio.csprojResolveAssemblyReference.cache
+C:\Users\mt1marco\Desktop\WebBS\Librerias.ReglasNegocio\obj\Debug\Librerias.ReglasNegocio.dll
+C:\Users\mt1marco\Desktop\WebBS\Librerias.ReglasNegocio\obj\Debug\Librerias.ReglasNegocio.pdb

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{10C4FBAB-D594-46BA-9467-3E84029BC5F6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ByS.Inventario.Logic</RootNamespace>
+    <AssemblyName>ByS.Inventario.Logic</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="brAlmacen.cs" />
+    <Compile Include="brDetalleNotaIngreso.cs" />
+    <Compile Include="brEmpleado.cs" />
+    <Compile Include="brGeneral.cs" />
+    <Compile Include="brKardex.cs" />
+    <Compile Include="brNotaIngreso.cs" />
+    <Compile Include="brOrdenCompra.cs" />
+    <Compile Include="brPedido.cs" />
+    <Compile Include="brProducto.cs" />
+    <Compile Include="brProgramacionInventario.cs" />
+    <Compile Include="brProgramacionPicking.cs" />
+    <Compile Include="brProveedor.cs" />
+    <Compile Include="brSucursal.cs" />
+    <Compile Include="brUsuario.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ByS.General.CodigoUsuario\ByS.General.CodigoUsuario.csproj">
+      <Project>{4c916296-88fc-429d-b5ac-ffe1364d4e00}</Project>
+      <Name>ByS.General.CodigoUsuario</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ByS.General.Entities\ByS.General.Entities.csproj">
+      <Project>{082758e8-7e0e-40ee-9931-d5c5baf24260}</Project>
+      <Name>ByS.General.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ByS.Inventario.Data\ByS.Inventario.Data.csproj">
+      <Project>{420ac247-6abe-4ba6-af83-8c5e5b3e1338}</Project>
+      <Name>ByS.Inventario.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ByS.Inventario.Entities\ByS.Inventario.Entities.csproj">
+      <Project>{f649fc55-d675-4cda-80db-d81005cb9685}</Project>
+      <Name>ByS.Inventario.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

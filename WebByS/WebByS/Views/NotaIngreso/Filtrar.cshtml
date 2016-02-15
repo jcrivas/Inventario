@@ -1,0 +1,109 @@
+﻿@using ByS.Inventario.Entities
+@model List<beNotaIngreso>
+@{
+    ViewBag.Title = "Filtrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-info">
+    <h4 class="panel-heading">Lista de Notas de Ingreso</h4>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-md-5 col-sm-4 col-xs-12">Fechas Nota Ingreso:</label>
+                        <div class="col-md-7 col-sm-8 col-xs-12">
+                            <div class="input-group">
+                                <input id="txtFechaInicio" type="text" class="form-control" value="@DateTime.Now.ToShortDateString()" data-bind="value: FiltroBusqueda.FechaInicio" />
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-md-5 col-sm-4 col-xs-12 visible-sm">&nbsp;</label>
+                        <div class="col-md-7 col-sm-8 col-xs-12">
+                            <div class="input-group">
+                                <input id="txtFechaFin" type="text" class="form-control" value="@DateTime.Now.ToShortDateString()" data-bind="value: FiltroBusqueda.FechaFin" />
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-md-5 col-sm-4 col-xs-12">N° Nota Ingreso:</label>
+                        <div class="col-md-7 col-sm-8 col-xs-12">
+                            <input id="txtNumeroNotaIngreso" type="text" class="form-control" data-bind="value: FiltroBusqueda.NumeroNotaIngreso" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-md-3 col-sm-4 col-xs-12">Almacén:</label>
+                        <div class="col-md-9 col-sm-8 col-xs-12">
+                            <input id="txtAlmacen" type="text" class="form-control" data-bind="value: FiltroBusqueda.Almacen" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group form-group-sm">
+                        <div class="col-xs-12">
+                            <input id="btnFiltrar" type="button" class="btn btn-default btn-sm form-control" value="Buscar">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            @*<button type="button" class="btn btn-primary"  data-bind="click: $root.NuevaNota">Nuevo</button>*@
+                            <a href="~/NotaIngreso/Editar" class="btn btn-primary">Nuevo Registro</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Acciones</th>
+                            <th class="text-center">Nro Nota Ingreso</th>
+                            <th class="text-center">Nro Orden Compra</th>
+                            <th class="text-center">Fecha Creación</th>
+                            <th class="text-center">Almacen</th>
+                            <th class="text-center">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbNotaIngreso">
+                        @*@Html.Partial("Tabla",Model)*@
+                        @foreach (var u in Model)
+                        {
+                            <tr>
+                                @*<td>@Ajax.ActionLink("Eliminar", "Delete", "NotaIngreso", new { notaIngresoId = u.NumeroNotaIngreso }, new AjaxOptions { HttpMethod = "DELETE" })</td>*@
+                                <td><a title="Eliminar" onclick="return confirm('¿Está seguro de eliminar?');" href="~/NotaIngreso/Delete/@u.NumeroNotaIngreso">Eliminar</a>
+                                    <a title="Editar" href="~/NotaIngreso/Editar/@u.NumeroNotaIngreso">Editar</a>
+                                </td>
+                                <td>@u.NumeroNotaIngreso</td>
+                                <td>@u.NumeroOrdenCompra</td>
+                                <td>@u.Fecha</td>
+                                <td>@u.IdAlmacen</td>
+                                <td>@u.EstadoNotaIngreso</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table> 
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/NotaIngreso.js"></script>

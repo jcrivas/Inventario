@@ -1,0 +1,129 @@
+C:\MMILLA\WebByS\WebByS\bin\WebByS.dll
+C:\MMILLA\WebByS\WebByS\bin\WebByS.pdb
+C:\MMILLA\WebByS\WebByS\bin\ByS.General.CodigoUsuario.dll
+C:\MMILLA\WebByS\WebByS\bin\ByS.General.Entities.dll
+C:\MMILLA\WebByS\WebByS\bin\ByS.Inventario.Entities.dll
+C:\MMILLA\WebByS\WebByS\bin\ByS.Inventario.Logic.dll
+C:\MMILLA\WebByS\WebByS\bin\Microsoft.Web.Infrastructure.dll
+C:\MMILLA\WebByS\WebByS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\MMILLA\WebByS\WebByS\bin\Newtonsoft.Json.dll
+C:\MMILLA\WebByS\WebByS\bin\System.Net.Http.Formatting.dll
+C:\MMILLA\WebByS\WebByS\bin\System.Web.Helpers.dll
+C:\MMILLA\WebByS\WebByS\bin\System.Web.Http.dll
+C:\MMILLA\WebByS\WebByS\bin\System.Web.Http.WebHost.dll
+C:\MMILLA\WebByS\WebByS\bin\System.Web.Mvc.dll
+C:\MMILLA\WebByS\WebByS\bin\System.Web.Razor.dll
+C:\MMILLA\WebByS\WebByS\bin\System.Web.WebPages.Deployment.dll
+C:\MMILLA\WebByS\WebByS\bin\System.Web.WebPages.dll
+C:\MMILLA\WebByS\WebByS\bin\System.Web.WebPages.Razor.dll
+C:\MMILLA\WebByS\WebByS\bin\ByS.Inventario.Data.dll
+C:\MMILLA\WebByS\WebByS\bin\ByS.General.CodigoUsuario.pdb
+C:\MMILLA\WebByS\WebByS\bin\ByS.General.Entities.pdb
+C:\MMILLA\WebByS\WebByS\bin\ByS.Inventario.Entities.pdb
+C:\MMILLA\WebByS\WebByS\bin\ByS.Inventario.Logic.pdb
+C:\MMILLA\WebByS\WebByS\bin\Newtonsoft.Json.xml
+C:\MMILLA\WebByS\WebByS\bin\System.Net.Http.Formatting.xml
+C:\MMILLA\WebByS\WebByS\bin\System.Web.Helpers.xml
+C:\MMILLA\WebByS\WebByS\bin\System.Web.Http.xml
+C:\MMILLA\WebByS\WebByS\bin\System.Web.Http.WebHost.xml
+C:\MMILLA\WebByS\WebByS\bin\System.Web.Mvc.xml
+C:\MMILLA\WebByS\WebByS\bin\System.Web.Razor.xml
+C:\MMILLA\WebByS\WebByS\bin\System.Web.WebPages.xml
+C:\MMILLA\WebByS\WebByS\bin\System.Web.WebPages.Deployment.xml
+C:\MMILLA\WebByS\WebByS\bin\System.Web.WebPages.Razor.xml
+C:\MMILLA\WebByS\WebByS\bin\ByS.Inventario.Data.pdb
+C:\MMILLA\WebByS\WebByS\bin\es\System.Net.Http.Formatting.resources.dll
+C:\MMILLA\WebByS\WebByS\bin\es\System.Web.Helpers.resources.dll
+C:\MMILLA\WebByS\WebByS\bin\es\System.Web.Http.resources.dll
+C:\MMILLA\WebByS\WebByS\bin\es\System.Web.Http.WebHost.resources.dll
+C:\MMILLA\WebByS\WebByS\bin\es\System.Web.Mvc.resources.dll
+C:\MMILLA\WebByS\WebByS\bin\es\System.Web.Razor.resources.dll
+C:\MMILLA\WebByS\WebByS\bin\es\System.Web.WebPages.resources.dll
+C:\MMILLA\WebByS\WebByS\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\MMILLA\WebByS\WebByS\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\MMILLA\WebByS\WebByS\obj\Debug\WebByS.csprojResolveAssemblyReference.cache
+C:\MMILLA\WebByS\WebByS\obj\Debug\WebByS.dll
+C:\MMILLA\WebByS\WebByS\obj\Debug\WebByS.pdb
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\WebByS.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\WebByS.pdb
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\ByS.General.CodigoUsuario.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\ByS.General.Entities.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\ByS.Inventario.Entities.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\ByS.Inventario.Logic.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\Newtonsoft.Json.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\System.Web.Helpers.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\System.Web.Mvc.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\System.Web.Razor.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\System.Web.WebPages.Deployment.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\System.Web.WebPages.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\System.Web.WebPages.Razor.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\ByS.Inventario.Data.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\ByS.General.CodigoUsuario.pdb
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\ByS.General.Entities.pdb
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\ByS.Inventario.Entities.pdb
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\ByS.Inventario.Logic.pdb
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\Newtonsoft.Json.xml
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\System.Web.Helpers.xml
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\System.Web.Mvc.xml
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\System.Web.Razor.xml
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\System.Web.WebPages.xml
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\System.Web.WebPages.Deployment.xml
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\System.Web.WebPages.Razor.xml
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\ByS.Inventario.Data.pdb
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\es\System.Web.Helpers.resources.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\es\System.Web.Mvc.resources.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\es\System.Web.Razor.resources.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\es\System.Web.WebPages.resources.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\obj\Debug\WebByS.csprojResolveAssemblyReference.cache
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\obj\Debug\WebByS.dll
+C:\Users\mt1marco\Desktop\WebBS\WebByS\WebByS\obj\Debug\WebByS.pdb
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\WebByS.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\WebByS.pdb
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\ByS.General.CodigoUsuario.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\ByS.General.Entities.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\ByS.Inventario.Entities.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\ByS.Inventario.Logic.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\Microsoft.Web.Infrastructure.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\Newtonsoft.Json.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\System.Net.Http.Formatting.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\System.Web.Helpers.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\System.Web.Http.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\System.Web.Http.WebHost.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\System.Web.Mvc.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\System.Web.Razor.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\System.Web.WebPages.Deployment.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\System.Web.WebPages.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\System.Web.WebPages.Razor.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\ByS.Inventario.Data.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\ByS.General.CodigoUsuario.pdb
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\ByS.General.Entities.pdb
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\ByS.Inventario.Entities.pdb
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\ByS.Inventario.Logic.pdb
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\Newtonsoft.Json.xml
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\System.Net.Http.Formatting.xml
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\System.Web.Helpers.xml
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\System.Web.Http.xml
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\System.Web.Http.WebHost.xml
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\System.Web.Mvc.xml
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\System.Web.Razor.xml
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\System.Web.WebPages.xml
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\System.Web.WebPages.Deployment.xml
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\System.Web.WebPages.Razor.xml
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\ByS.Inventario.Data.pdb
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\es\System.Net.Http.Formatting.resources.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\es\System.Web.Helpers.resources.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\es\System.Web.Http.resources.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\es\System.Web.Http.WebHost.resources.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\es\System.Web.Mvc.resources.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\es\System.Web.Razor.resources.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\es\System.Web.WebPages.resources.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\obj\Debug\WebByS.csprojResolveAssemblyReference.cache
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\obj\Debug\WebByS.dll
+C:\Proyecto_ByS\Avance 17\WebByS\WebByS\obj\Debug\WebByS.pdb

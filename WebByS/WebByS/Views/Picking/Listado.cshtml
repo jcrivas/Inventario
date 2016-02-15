@@ -1,0 +1,51 @@
+﻿@model List<ByS.Inventario.Entities.beProgramacionPicking>
+
+@{
+    ViewBag.Title = "Listado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-info">
+    <h4 class="panel-heading">Listado de Picking de Pedidos</h4>
+    <div class="panel-body">
+        <div class="row">
+        </div>
+        <div class="form-horizontal">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center"></th>
+                            <th class="text-center">Código</th>
+                            <th class="text-center">Responsable</th>
+                            <th class="text-center">Fecha Entrega</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Count > 0)
+                        {
+                            int j = 0;
+                            foreach (var u in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @*@Html.ActionLink("Detalle", "Detalle", new { id = u.IdProgramacionPicking }, new { @style = "background-image:url('../Content/images/detalle-icono.png');background-repeat: no-repeat;" })*@
+                                        @Html.ActionLink("Detalle", "Detalle", new { id = u.IdProgramacionPicking }, new { @class = "detalle" })
+                                    </td>
+                                    <td>@Html.DisplayFor(a => a[j].IdProgramacionPicking) @Html.HiddenFor(a => a[j].IdProgramacionPicking)</td>
+                                    <td>@Html.DisplayFor(a => a[j].Responsable)</td>
+                                    <td>@Html.DisplayFor(a => a[j].FechaFormateada)</td>
+                                </tr>
+                                j++;
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Retornar", "Index")
+</div>

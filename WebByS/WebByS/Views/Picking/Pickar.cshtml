@@ -1,0 +1,97 @@
+﻿@using ByS.Inventario.Entities
+@model bePedido
+
+@{
+    ViewBag.Title = "Pickar";
+    List<beDetalleProgramacionPicking> listaPickar = (List<beDetalleProgramacionPicking>)ViewBag.ListaProducto;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-info">
+    <h4 class="panel-heading">Pickar Pedido</h4>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-md-5 col-sm-4 col-xs-12">Nro. Pedido</label>
+                        <div class="col-md-7 col-sm-8 col-xs-12">
+                            <div class="input-group">
+                                <input id="NumeroPedido" name="NumeroPedido" value="@Model.NumeroPedido" class="noeditable" readonly="true" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-md-5 col-sm-4 col-xs-12">Fecha</label>
+                        <div class="col-md-7 col-sm-8 col-xs-12">
+                            <div class="input-group">
+                                <input id="FechaFormateada" name="FechaFormateada" value="@Model.FechaFormateada" class="noeditable" readonly="true" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-md-5 col-sm-4 col-xs-12">Sucursal</label>
+                        <div class="col-md-7 col-sm-8 col-xs-12">
+                            <div class="input-group">
+                                <input id="NombreSucursal" name="NombreSucursal" value="@Model.NombreSucursal" class="noeditable" readonly="true" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-md-5 col-sm-4 col-xs-12">Dirección de entrega</label>
+                        <div class="col-md-7 col-sm-8 col-xs-12">
+                            <div class="input-group">
+                                <input id="Direccion" name="Direccion" style="width:250px" value="@Model.Direccion" class="noeditable" readonly="true" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center"></th>
+                            <th class="text-center">Codigo artículo</th>
+                            <th class="text-center">Nombre artículo</th>
+                            <th class="text-center">Unidad de medida</th>
+                            <th class="text-center">Cant. pedida</th>
+                            <th class="text-center">Cant. atendida</th>
+                            <th class="text-center">Saldo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var u in listaPickar)
+                        {
+                            <tr>
+                                <td>
+                                    <a title="Atender" href="~/Picking/Atender?PickingId=@u.IdProgramacionPicking&pedidoId=@u.NumeroPedido.Trim()&productoId=@u.IdProducto">Atender</a>
+                                </td>
+                                <td>@u.IdProducto</td>
+                                <td>@u.NombreProducto</td>
+                                <td>@u.UnidadMedida</td>
+                                <td>@u.CantidadPedido</td>
+                                <td>@u.CantidadAtendida</td>
+                                <td>@u.Saldo</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("Retornar", "PickarPedido")
+</p>

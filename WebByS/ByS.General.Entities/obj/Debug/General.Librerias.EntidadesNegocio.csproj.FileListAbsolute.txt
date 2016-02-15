@@ -1,0 +1,13 @@
+C:\TallerNET45\EditoraPeru\Librerias\General.Librerias.EntidadesNegocio\bin\Debug\General.Librerias.EntidadesNegocio.dll
+C:\TallerNET45\EditoraPeru\Librerias\General.Librerias.EntidadesNegocio\bin\Debug\General.Librerias.EntidadesNegocio.pdb
+C:\TallerNET45\EditoraPeru\Librerias\General.Librerias.EntidadesNegocio\obj\Debug\General.Librerias.EntidadesNegocio.dll
+C:\TallerNET45\EditoraPeru\Librerias\General.Librerias.EntidadesNegocio\obj\Debug\General.Librerias.EntidadesNegocio.pdb
+C:\CursoMVC\EditoraPeru\Librerias\General.Librerias.EntidadesNegocio\bin\Debug\General.Librerias.EntidadesNegocio.dll
+C:\CursoMVC\EditoraPeru\Librerias\General.Librerias.EntidadesNegocio\bin\Debug\General.Librerias.EntidadesNegocio.pdb
+C:\CursoMVC\EditoraPeru\Librerias\General.Librerias.EntidadesNegocio\obj\Debug\General.Librerias.EntidadesNegocio.dll
+C:\CursoMVC\EditoraPeru\Librerias\General.Librerias.EntidadesNegocio\obj\Debug\General.Librerias.EntidadesNegocio.pdb
+C:\Users\mt1marco\Desktop\WebBS\General.Librerias.EntidadesNegocio\bin\Debug\General.Librerias.EntidadesNegocio.dll
+C:\Users\mt1marco\Desktop\WebBS\General.Librerias.EntidadesNegocio\bin\Debug\General.Librerias.EntidadesNegocio.pdb
+C:\Users\mt1marco\Desktop\WebBS\General.Librerias.EntidadesNegocio\obj\Debug\General.Librerias.EntidadesNegocio.csprojResolveAssemblyReference.cache
+C:\Users\mt1marco\Desktop\WebBS\General.Librerias.EntidadesNegocio\obj\Debug\General.Librerias.EntidadesNegocio.dll
+C:\Users\mt1marco\Desktop\WebBS\General.Librerias.EntidadesNegocio\obj\Debug\General.Librerias.EntidadesNegocio.pdb
